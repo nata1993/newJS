@@ -12,7 +12,7 @@ app.post("/", function(request, response){  // "/" here is same as in index.html
     console.log(request.body);
     let num1 = Number(request.body.weight);   // this is casting not parsing
     let num2 = Number(request.body.height);
-    let result = num1 / ((num2 * num2) / 10000);
+    let result = num1 / ((num2 * num2) / 10000);    // divide by 100 is because 100cm * 100 cm = 10 000 but we need it in meters
     console.log(`Your BMI: ${result}`);
 
 
