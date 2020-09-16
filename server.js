@@ -10,10 +10,24 @@ app.get("/", function(request, response){
 
 app.post("/", function(request, response){  // "/" here is same as in index.html form "action"
     console.log(request.body);
-    let num1 = Number(request.body.num1);   // this is casting not parsing
-    let num2 = Number(request.body.num2);
-    let result = num1 + num2;
-    console.log(`${num1} + ${num1} = ${result}`);
+    let num1 = Number(request.body.weight);   // this is casting not parsing
+    let num2 = Number(request.body.height);
+    let result = num1 / ((num2 * num2) / 10000);
+    console.log(`Your BMI: ${result}`);
+
+
+        if (result < 19){
+            console.log("You are underweight!");
+        }
+        if (result >= 19 && result < 24.9){
+                console.log("You are in normal weight!");
+        }
+        if(result >= 25 && result < 29.9){
+                console.log("You are overweight!");
+        }
+        if (result >= 30){
+                console.log("You are FAT!");
+        }
 });
 /*app.get('/about', function(req, res){
     res.send("<h2>ney</h2>");
