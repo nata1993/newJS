@@ -1,0 +1,5 @@
+when node_modules is ignored, need to npm i "module name" every new git clone or install
+
+modules used:
+- express
+- body-parser
